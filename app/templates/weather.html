@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for x in w[::-1] %}
+    <div style="background-color: #4fc3f7; margin-bottom: 5; margin-right: 90%; border-radius: 1; border-color:#4fc3f7">
+        <br><br>Temperatura: {{ x["temperature"]}}
+        <br>Data: {{ datetime.utcfromtimestamp(int(x["date"])//1000).strftime('%Y-%m-%d %H:%M:%S') }}
+    </div>
+    {% endfor %}
+{% endblock %}
